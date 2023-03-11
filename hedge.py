@@ -14,12 +14,9 @@ class Hedge:
 
 		self.c_price_u = self.u - self.K
 		self.c_price_d = self.d - self.K
-		
-		if (self.c_price_d < 0):
-			self.c_price_d = 0
-		
-		hedge_ratio = (self.c_price_u - self.c_price_d) / (self.u - self.d) # size of exporsure / size of position in the future
-		return hedge_ratio
+
+		self.c_price_d = max(self.c_price_d, 0)
+		return (self.c_price_u - self.c_price_d) / (self.u - self.d)
 		
 	# resize proportion
 	def hedge_ratio_proportion(self,ratio):
