@@ -7,7 +7,7 @@
 
 from math import *
 
-def Binomial(S,K,u,d,r,T): # One-Step Binomial Pricing
+def Binomial(S,K,u,d,r,T):    # One-Step Binomial Pricing
     """
     S = Current stock price
     K = Option striking price
@@ -23,8 +23,7 @@ def Binomial(S,K,u,d,r,T): # One-Step Binomial Pricing
     delta_s = 1 / (S * u - S * d)
     portfolio = (S * d) * delta_s
     pv = portfolio * discount # portfolio present value
-    option_price = (S * delta_s) - pv
-    return option_price
+    return (S * delta_s) - pv
 
 
 if __name__ == "__main__":

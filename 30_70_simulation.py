@@ -16,7 +16,7 @@ def Money(num_sims, num_participants):
 	- Other pick from the universe of stocks with 25%' volatility and 10%' average return. (# strong assumption)
 	"""
 	i_won = []	# array to store outcomes
-	for sim in range(0, num_sims):	# for every simulation
+	for _ in range(num_sims):
 		stock_returns = np.random.randn(num_participants) * 0.25 + 0.1
 		best_return = max(stock_returns)
 		my_return = 1 if np.random.rand() > 0.7 else -1 # a binary outcome for your stock: either win or lose
